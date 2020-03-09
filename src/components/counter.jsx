@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import "../styles/Counter.css";
 
 class Counter extends Component {
   componentDidUpdate(prevProps, prevState) {
@@ -17,7 +18,7 @@ class Counter extends Component {
     console.log("Counter - Rendered");
     const { onIncrement, onDelete, counter } = this.props;
     return (
-      <React.Fragment>
+      <div className="counter">
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => onIncrement(counter)}
@@ -31,7 +32,7 @@ class Counter extends Component {
         >
           Delete
         </button>
-      </React.Fragment>
+      </div>
     );
   }
 
